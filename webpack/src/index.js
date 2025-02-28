@@ -1,20 +1,30 @@
 import "./styles.css";
-import groundBeef from "./images/beef.jpg"
+import home from "./home.js"
+import about from "./about.js"
+import menu from "./menu.js"
+// import groundBeef from "./images/beef.jpg"
 
-console.log("Hello World");
+function clearDiv(){
+    let content = document.querySelector("#content");
+    content.innerHTML = "";
+}
 
-const content = document.querySelector("#content");
+const homeBtn = document.querySelector("#Home");
+homeBtn.addEventListener("click", () => {
+    clearDiv();
+    home();
+})
 
-const h1 = document.createElement("h1");
-const img = document.createElement("img");
-const p = document.createElement("p");
+const aboutBtn = document.querySelector("#About");
+aboutBtn.addEventListener("click", () => {
+    clearDiv();
+    about();
+})
 
-content.appendChild(h1);
-content.appendChild(img);
-content.appendChild(p);
+const menuBtn = document.querySelector("#Menu");
+menuBtn.addEventListener("click", () => {
+    clearDiv();
+    menu();
+})
 
-
-h1.textContent = "Ground Beef Dish";
-img.src = groundBeef;
-img.alt = "ground beef";
-p.textContent = "This is one of my best dishes with lot of protein.";
+home();
